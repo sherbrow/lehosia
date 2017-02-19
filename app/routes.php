@@ -11,3 +11,5 @@ $app->get('/helloJson', function () {
 $app->get('/helloUri', function () {
     return url('hello');
 });
+
+$app->get('/', 'HelloController@index');
