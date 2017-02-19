@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\DomCrawler\Crawler;
+
 class AppTest extends TestCase 
 {
     public function testHello()
@@ -21,5 +23,16 @@ class AppTest extends TestCase
         $this->get('/is404');
 
         $this->assertEquals(404, $this->response->getStatusCode());
+    }
+    
+    public function testIndex()
+    {
+        $this->get('/');
+        
+        $crawler = new Crawler($this->response->getContent());
+        
+        foreach ($crawler->filterXPath('//a') as $link) {
+            $this->assertEquals($this->baseUrl.'/'.$link->nodeValue, $link->getAttribute('href'));
+        }
     }
 }
