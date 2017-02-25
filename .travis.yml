@@ -3,9 +3,12 @@ php:
   - '5.6'
   - '7.1'
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
 
 before_script:
-  - composer install
+  - composer install --prefer-dist
   
 script:
   phpunit --coverage-clover storage/clover.xml
