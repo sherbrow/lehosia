@@ -22,6 +22,7 @@
             <file>./app.php</file>
             <exclude>
               <directory suffix=".blade.php">./app/Views</directory>
+              <directory prefix="Lumen">./app/Routing</directory>
             </exclude>
         </whitelist>
     </filter>
