@@ -8,7 +8,8 @@
     "require-dev": {
         "phpunit/phpunit": "^5.0",
         "laravel/lumen": "^5.4",
-        "symfony/dom-crawler": "^3.2"
+        "symfony/dom-crawler": "^3.2",
+        "satooshi/php-coveralls": "^1.0"
     },
     "autoload": {
         "psr-4": {
