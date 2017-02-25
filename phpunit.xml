@@ -17,6 +17,8 @@
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app</directory>
+            <directory suffix=".php">./config</directory>
+            <directory suffix=".php">./database/migrations</directory>
             <file>./app.php</file>
             <exclude>
               <directory suffix=".blade.php">./app/Views</directory>
