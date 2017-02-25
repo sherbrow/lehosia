@@ -18,6 +18,16 @@ class AppTest extends TestCase
         $jsonResponse->seeJson(['who' => 'world']);
     }
     
+    public function testHelloUri()
+    {
+        $this->get('/helloUri');
+        
+        $uri = $this->response->getContent();
+        $this->get($uri);
+        
+        $this->assertEquals('world', $this->response->getContent());
+    }
+    
     public function test404()
     {
         $this->get('/is404');

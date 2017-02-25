@@ -52,9 +52,11 @@ class ExceptionHandler extends LumenExceptionHandler
             $statusCode = $e->getStatusCode();
             $error['message'] = $e->getMessage()?:'HTTP_EXCEPTION';
         }
+        // @codeCoverageIgnoreStart
         else if(env('APP_ENV') == 'local') {
             return parent::render($request, $e);
         }
+        // @codeCoverageIgnoreEnd
         
         return response()->json(['errors' => [$error]], $statusCode);
     }
